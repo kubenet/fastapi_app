@@ -1,17 +1,16 @@
+from random import random, randint
 from fastapi import FastAPI
+from fastapi.logger import logger
 from pymongo import MongoClient
 import datetime
 import logging
 
-logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBUG)
-logging.debug('This message should go to the log file')
-logging.info('So should this')
-logging.warning('And this, too')
-logging.error('And non-ASCII stuff, too, like Øresund and Malmö')
+
+logging.basicConfig(level=logging.DEBUG, filename='app.log', filemode='a', format='%(name)s - %(levelname)s - %(message)s')
+logging.warning('This will get logged to a file')
 
 client = MongoClient('mongodb://localhost:27017/')
 db = client.test
-collection = db.posts
 
 
 post = {"author": "Mike",
@@ -19,26 +18,38 @@ post = {"author": "Mike",
         "tags": ["mongodb", "python", "pymongo"],
         "date": datetime.datetime.utcnow()}
 
-posts = db.posts
-post_id = posts.insert_one(post).inserted_id
+#posts = db.posts
+#post_id = posts.insert_one(post).inserted_id
 print(db.list_collection_names())
 
 app = FastAPI()
-
+logger = logging.getLogger("app.error")
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World"}
+	db.posts({"name":"Vasya","status":"new_user"})
+	logger.info('Main Page: [Get request]')
+	return {"message": "Hello World"}
 
 @app.get("/about")
 async def about():
-    return {"message": "Page About"}
+	logger.info('About Page: [get request]')
+	return {"message": "Page About"}
 
 @app.get("/help")
 async def help():
-    return {"message": "FAQ..."}
+	logger.info('HELP Page [get]')
+	return {"message": "FAQ..."}
 
 @app.post("/number/<value>")
 async def help(value):
-    return {"message": value}
+	logger.info('Number Page [post]')
+	return {"message": value}
 
+@app.get("/gnumber")
+async def gnumber():
+	value = randint(1,100)
+	global db
+	db.post.insert_one({"name": "Vasya", "number": value})
+	logger.info(f'Get Number Page [get] {value}')
+	return {"message": value}
