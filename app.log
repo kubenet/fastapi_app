@@ -89,3 +89,182 @@ uvicorn.error - INFO - Shutting down
 uvicorn.error - INFO - Waiting for application shutdown.
 uvicorn.error - INFO - Application shutdown complete.
 uvicorn.error - INFO - Finished server process [8924]
+root - WARNING - This will get logged to a file
+root - WARNING - This will get logged to a file
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [10760]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.error - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "c:\docker\fastapi_rest\env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\fastapi\routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "c:\docker\fastapi_rest\env\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File ".\app.py", line 17, in root
+    db.posts({"name": "Vasya", "status": "new_user"})
+NameError: name 'db' is not defined
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [10760]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [13368]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Main Page: [Get request]
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [13368]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [10696]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.error - WARNING - Invalid HTTP request received.
+Traceback (most recent call last):
+  File "c:\docker\fastapi_rest\env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 172, in handle_events
+    event = self.conn.next_event()
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_readers.py", line 75, in maybe_read_from_IDLE_client
+    return Request(
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_events.py", line 71, in __init__
+    self._validate()
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_events.py", line 140, in _validate
+    raise LocalProtocolError("Missing mandatory Host: header")
+h11._util.RemoteProtocolError: Missing mandatory Host: header
+uvicorn.error - WARNING - Invalid HTTP request received.
+Traceback (most recent call last):
+  File "c:\docker\fastapi_rest\env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 172, in handle_events
+    event = self.conn.next_event()
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_readers.py", line 75, in maybe_read_from_IDLE_client
+    return Request(
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_events.py", line 71, in __init__
+    self._validate()
+  File "c:\docker\fastapi_rest\env\lib\site-packages\h11\_events.py", line 140, in _validate
+    raise LocalProtocolError("Missing mandatory Host: header")
+h11._util.RemoteProtocolError: Missing mandatory Host: header
+app.error - INFO - Request to create a new client: test@mail.com
+uvicorn.error - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "c:\docker\fastapi_rest\env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\fastapi\routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "c:\docker\fastapi_rest\env\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File ".\app.py", line 51, in new_client
+    result = mongo_config.init_client(email)
+  File ".\mongo_config.py", line 27, in init_client
+    r = requests("https://www.passwordrandom.com/query?command=password")
+TypeError: 'module' object is not callable
+app.error - INFO - Request to create a new client: test2@mail.com
+uvicorn.error - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "c:\docker\fastapi_rest\env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "c:\docker\fastapi_rest\env\lib\site-packages\fastapi\routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "c:\docker\fastapi_rest\env\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File ".\app.py", line 51, in new_client
+    result = mongo_config.init_client(email)
+  File ".\mongo_config.py", line 27, in init_client
+    r = requests.get("https://www.passwordrandom.com/query?command=password")
+TypeError: 'module' object is not callable
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [10696]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [4116]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Request to create a new client: test2@mail.com
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 132
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [4116]
