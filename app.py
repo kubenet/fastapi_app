@@ -3,6 +3,8 @@ from fastapi import FastAPI
 from fastapi.logger import logger
 import mongo_config
 import logging
+from schemes import CreateUser
+
 
 logging.basicConfig(level=logging.DEBUG, filename='app.log', filemode='a',
                     format='%(name)s - %(levelname)s - %(message)s')
@@ -45,11 +47,19 @@ async def get_number():
     return {"message": "Get Number Page [get]"}
 
 
-@app.post("/newclient/<email>")
+@app.post("/newclient/{email}")
 async def new_client(email):
-    logger.info(f'Request to create a new client: {email}')
-    result = mongo_config.init_client(email)
+    logger.info(f'Receive request to create a new client: {email}')
+    try:
+        result = mongo_config.init_client(email)
+    except:
+        logger.error(f'Receive request to create a new client: {email}')
     if result["status"]:
         return {"message": email, "password": result["password"]}
     else:
         return result
+
+
+@app.post("/test_user")
+async def test(new_user: CreateUser):
+    return {"new user": new_user}

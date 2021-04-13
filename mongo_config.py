@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+from pymongo import MongoClient, errors
 import datetime
 import requests
 
@@ -38,15 +38,19 @@ def init_client(email):
         print(e)
         return {"status": False,
                 "message": "requests.exceptions.RequestException. [Timeout generation password service]"}
-
-    db = client['clients']
-    if email in db.list_collection_names():  # logging
-        return {"status": False, "message": "Email incorrect!"}
-    else:
-        posts = db[email]
-        template = template_base
-        template["email"] = email
-        template["password"] = r.text
-        post_id = posts.insert_one(template).inserted_id  # logging
-        print(post_id)  # logging
-        return {"status": True, "password": r.text}
+    try:
+        db = client['clients']
+        if email in db.list_collection_names():  # logging
+            return {"status": False, "message": "Email incorrect!"}
+        else:
+            posts = db[email]
+            template = template_base
+            template["email"] = email
+            template["password"] = r.text
+            post_id = posts.insert_one(template).inserted_id  # logging
+            print(post_id)  # logging
+            return {"status": True, "password": r.text}
+    except errors.ServerSelectionTimeoutError:  # сервер mongodb не отвечает более 30 сек
+        return {"status": False,
+                "message": "If there is no suitable server for an operation PyMongo tries for serverSelectionTimeoutMS "
+                           "(default 30 seconds) to find one, then throws this exception."}

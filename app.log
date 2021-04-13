@@ -268,3 +268,264 @@ uvicorn.error - INFO - Shutting down
 uvicorn.error - INFO - Waiting for application shutdown.
 uvicorn.error - INFO - Application shutdown complete.
 uvicorn.error - INFO - Finished server process [4116]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [19360]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Main Page: [Get request]
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [19360]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [7032]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Main Page: [Get request]
+app.error - INFO - Request to create a new client: fail@mail.com
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 131
+uvicorn.error - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\fastapi\routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File ".\app.py", line 51, in new_client
+    result = mongo_config.init_client(email)
+  File ".\mongo_config.py", line 53, in init_client
+    except pymongo.errors.ServerSelectionTimeoutError:
+NameError: name 'pymongo' is not defined
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [7032]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [16972]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Request to create a new client: fail@mail.com
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 132
+uvicorn.error - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\fastapi\routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File ".\app.py", line 51, in new_client
+    result = mongo_config.init_client(email)
+  File ".\mongo_config.py", line 53, in init_client
+    except client.errors.ServerSelectionTimeoutError:
+TypeError: catching classes that do not inherit from BaseException is not allowed
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [16972]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [19164]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Request to create a new client: false@mail
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 130
+uvicorn.error - ERROR - Exception in ASGI application
+Traceback (most recent call last):
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\uvicorn\protocols\http\h11_impl.py", line 396, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\uvicorn\middleware\proxy_headers.py", line 45, in __call__
+    return await self.app(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\fastapi\applications.py", line 199, in __call__
+    await super().__call__(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\applications.py", line 111, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\middleware\errors.py", line 181, in __call__
+    raise exc from None
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\middleware\errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\exceptions.py", line 82, in __call__
+    raise exc from None
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\routing.py", line 566, in __call__
+    await route.handle(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\routing.py", line 227, in handle
+    await self.app(scope, receive, send)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\starlette\routing.py", line 41, in app
+    response = await func(request)
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\fastapi\routing.py", line 201, in app
+    raw_response = await run_endpoint_function(
+  File "c:\users\bems 207\pycharmprojects\fastapi_app\env\lib\site-packages\fastapi\routing.py", line 148, in run_endpoint_function
+    return await dependant.call(**values)
+  File ".\app.py", line 51, in new_client
+    result = mongo_config.init_client(email)
+  File ".\mongo_config.py", line 53, in init_client
+    except errors.errors.ServerSelectionTimeoutError:
+AttributeError: module 'pymongo.errors' has no attribute 'errors'
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [19164]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [6676]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Request to create a new client: false@mail.com
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 131
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [6676]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [15660]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Receive request to create a new client: fail_two@mail.com
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 132
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [15660]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [10308]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Receive request to create a new client: e3e3
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 131
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [10308]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [16960]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Receive request to create a new client: www@mail.com
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 131
+app.error - INFO - Receive request to create a new client: 123
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 131
+app.error - INFO - Receive request to create a new client: 123
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 131
+app.error - INFO - Receive request to create a new client: 123
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 132
+app.error - INFO - Receive request to create a new client: qqq@ff.com
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 132
+app.error - INFO - Receive request to create a new client: qqqff
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 131
+app.error - INFO - Receive request to create a new client: 123
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 130
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [16960]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [15236]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+app.error - INFO - Receive request to create a new client: qew@ff.com
+urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): www.passwordrandom.com:443
+urllib3.connectionpool - DEBUG - https://www.passwordrandom.com:443 "GET /query?command=password HTTP/1.1" 200 131
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [15236]
+root - WARNING - This will get logged to a file
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [20060]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [20060]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [16992]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [16992]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [19352]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [19352]
+root - WARNING - This will get logged to a file
+uvicorn.error - INFO - Started server process [2156]
+uvicorn.error - INFO - Waiting for application startup.
+uvicorn.error - INFO - Application startup complete.
+uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+uvicorn.error - INFO - Shutting down
+uvicorn.error - INFO - Waiting for application shutdown.
+uvicorn.error - INFO - Application shutdown complete.
+uvicorn.error - INFO - Finished server process [2156]
