@@ -3,8 +3,7 @@ from fastapi import FastAPI
 from fastapi.logger import logger
 import mongo_config
 import logging
-from schemes import CreateUser
-
+from schemes import Sensor, User, Device
 
 logging.basicConfig(level=logging.DEBUG, filename='app.log', filemode='a',
                     format='%(name)s - %(levelname)s - %(message)s')
@@ -15,6 +14,8 @@ logger = logging.getLogger("app.error")
 
 
 @app.get("/")
+@app.get("/index")
+@app.get("/main")
 async def root():
     logger.info('Main Page: [Get request]')
     return {"message": "Hello World"}
@@ -47,8 +48,8 @@ async def get_number():
     return {"message": "Get Number Page [get]"}
 
 
-@app.post("/newclient/{email}")
-async def new_client(email):
+@app.post("/registration/{email, passwd}")
+async def registration(email):
     logger.info(f'Receive request to create a new client: {email}')
     try:
         result = mongo_config.init_client(email)
@@ -61,5 +62,44 @@ async def new_client(email):
 
 
 @app.post("/test_user")
-async def test(new_user: CreateUser):
+async def test(new_user: User):
     return {"new user": new_user}
+
+
+######
+
+# Создать устройство [device]
+@app.post("/{user}/new_device/{name_device}")
+async def test(sensor: Sensor):
+    return {"status": "ok"}, 200
+
+
+# получить информацию об одном устройстве [device]
+@app.get("/{user}/{deviceName}")
+async def test(sensor: Sensor):
+    return {"status": "ok"}, 200
+
+
+# получить список всех устройств юзера [devices]
+@app.get("/{user}/devices")
+async def test(user: User):
+    return {"activeDevices": ["device1", "device2", "device3"],
+            "inactiveDevices": ["device4", "device5"], "version": "ver 0.1"}, 200
+
+
+# Добавить датчик к устройству [device] в поле [sensor]
+@app.post("/{user}/deviceName/new_sensor")
+async def test(sensor: Sensor):
+    return {"status": "ok"}, 200
+
+
+# изменить датчик к устройству [device] в поле [sensor]
+@app.post("/{user}/device/{id}/new_sensor")
+async def test(sensor: Sensor):
+    return {"status": "ok"}, 200
+
+
+# Запись данных с дачтика подключенного к устройству [device] в поле [sensor]
+@app.post("/{user}/device/{id}/sensor")
+async def test(sensor: Sensor):
+    return {"status": "ok"}, 200
