@@ -103,3 +103,5 @@ async def test(sensor: Sensor):
 @app.post("/{user}/device/{id}/sensor")
 async def test(sensor: Sensor):
     return {"status": "ok"}, 200
+
+# https://cloud.yandex.ru/docs/iot-core/api-ref/Device/list
